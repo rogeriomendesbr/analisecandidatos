@@ -1,0 +1,22 @@
+# Controle de versão
+.git/
+.gitignore
+
+# Segredos — nunca incluir na imagem
+.streamlit/secrets.toml
+
+# Cache Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Ambiente virtual local
+venv/
+.venv/
+
+# Variáveis de ambiente locais
+.env
+
+# OS
+.DS_Store
+Thumbs.db
