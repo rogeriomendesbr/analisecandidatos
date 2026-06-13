@@ -1,0 +1,33 @@
+/* Mantém o cabeçalho/menu visível e clicável, mas remove o fundo branco dele */
+header[data-testid="stHeader"] {
+    background-color: rgba(0, 0, 0, 0) !important;
+}
+
+/* Move o bloco de conteúdo principal para o topo absoluto */
+div[data-testid="stMainBlockContainer"] {
+    padding-top: 0rem !important;
+    margin-top: 0rem !important;
+}
+
+/* Garante que o contêiner interno também ignore margens superiores */
+section[data-testid="stMain"] {
+    padding-top: 0rem !important;
+}
+
+
+.st-key-go-button > div > button {
+    background-color: #218838;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    min-width: 140px;
+    padding: 12px 0;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.st-key-go-button > div > button:hover {
+    background-color: #28a745;
+    border-color: #1e7e34;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
