@@ -28,14 +28,12 @@ with col_title:
 
 col1, col2, col3 = st.columns(3)
 
-LABEL_STYLE = 'style="font-size:14px;font-weight:600;display:inline-block;margin-bottom:0.5rem;"'
-
 with col1:
-    st.markdown(f'<label {LABEL_STYLE}>Insira os requisitos da vaga:</label>', unsafe_allow_html=True)
+    st.markdown(f'<label class="top-label">Insira os requisitos da vaga:</label>', unsafe_allow_html=True)
     text_requisites = st.text_area("", height=200, label_visibility="collapsed")
 
 with col2:
-    st.markdown(f'<label {LABEL_STYLE}>Escolha os currículos no formato .md:</label>', unsafe_allow_html=True)
+    st.markdown(f'<label class="top-label">Escolha os currículos no formato .md:</label>', unsafe_allow_html=True)
     uploaded_file = st.file_uploader(
         "",
         type=["md"],
@@ -48,7 +46,7 @@ with col2:
         st.rerun()
 
 with col3:
-    st.markdown(f'<label {LABEL_STYLE}>Currículos carregados:</label>', unsafe_allow_html=True)
+    st.markdown(f'<label class="top-label">Currículos carregados:</label>', unsafe_allow_html=True)
     with st.container(height=154, border=False):
         if st.session_state.uploaded_files:
             to_remove = st.pills(

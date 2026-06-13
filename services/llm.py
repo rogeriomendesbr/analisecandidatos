@@ -22,7 +22,7 @@ class APIError(Exception):
 
 def build_prompt(prompt_template: str, requirements: str, resumes: dict) -> str:
     text_resumes = "\n\n- ".join(resumes.values())
-    return f"{prompt_template}\n\nRequisitos:\n\n{requirements}\n\nCurrículos:\n\n- {text_resumes}"
+    return f"{prompt_template}\n\n**REQUISITOS DA VAGA:**\n\n```{requirements}```\n\n**CURRÍCULOS DOS CANDIDATOS:**\n\n```- {text_resumes}```"
 
 
 def analyze_resumes(api_key: str, model: str, prompt: str) -> str:
