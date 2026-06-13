@@ -31,13 +31,13 @@ col1, col2, col3 = st.columns(3)
 LABEL_STYLE = 'style="font-size:14px;font-weight:600;display:inline-block;margin-bottom:0.5rem;"'
 
 with col1:
-    st.markdown(f'<label {LABEL_STYLE}>Insira os requisitos da vaga aqui:</label>', unsafe_allow_html=True)
-    text_requisites = st.text_area("Insira os requisitos da vaga aqui:", height=200, label_visibility="collapsed")
+    st.markdown(f'<label {LABEL_STYLE}>Insira os requisitos da vaga:</label>', unsafe_allow_html=True)
+    text_requisites = st.text_area("", height=200, label_visibility="collapsed")
 
 with col2:
-    st.markdown(f'<label {LABEL_STYLE}>Escolha um currículo no formato .md</label>', unsafe_allow_html=True)
+    st.markdown(f'<label {LABEL_STYLE}>Escolha os currículos no formato .md:</label>', unsafe_allow_html=True)
     uploaded_file = st.file_uploader(
-        "Escolha um currículo no formato .md",
+        "",
         type=["md"],
         key=f"uploader_{st.session_state.uploader_key}",
         label_visibility="collapsed",
@@ -66,7 +66,7 @@ with col3:
 
 st.divider()
 
-if st.button("Analisar currículos", key="go-button"):
+if st.button("Analisar candidatos", key="go-button"):
     if not text_requisites or not st.session_state.uploaded_files:
         st.error("Por favor, insira os requisitos da vaga e carregue pelo menos um currículo.")
     else:
