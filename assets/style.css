@@ -1,15 +1,12 @@
-/* Mantém o cabeçalho/menu visível e clicável, mas remove o fundo branco dele */
 header[data-testid="stHeader"] {
     background-color: rgba(0, 0, 0, 0) !important;
 }
 
-/* Move o bloco de conteúdo principal para o topo absoluto */
 div[data-testid="stMainBlockContainer"] {
     padding-top: 0rem !important;
     margin-top: 0rem !important;
 }
 
-/* Garante que o contêiner interno também ignore margens superiores */
 section[data-testid="stMain"] {
     padding-top: 0rem !important;
 }

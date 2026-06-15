@@ -40,7 +40,7 @@ Acesse em: http://localhost:7860
 ```bash
 pip install -r requirements.txt
 # configure .streamlit/secrets.toml (veja secrets.toml.example)
-streamlit run app.py
+python streamlit run app.py
 ```
 
 ## Configuração de segredos (Hugging Face Spaces)
@@ -60,5 +60,5 @@ O token pode ser criado em **huggingface.co → Settings → Access Tokens**.
 |---|---|
 | **Nome** | Rogério Mendes |
 | **E-mail** | rogeriomendes@gmail.com |
-| **GitHub** | https://github.com/rogeriomendes-projects |
-| **LinkedIn** | https://www.linkedin.com/in/rogeriomendesdev |
+| **GitHub** | https://github.com/rogeriomendesbr |
+| **LinkedIn** | https://www.linkedin.com/in/rogeriomendesbr |

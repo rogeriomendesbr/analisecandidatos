@@ -1,4 +1,6 @@
-# **Assuma o papel de um analista de RH sênior** e avalie o alinhamento dos currículos enviados em relação aos requisitos da vaga informados ao final deste prompt.
+# Análise de Candidatos
+
+**Assuma o papel de um analista de RH sênior** e avalie o alinhamento dos currículos enviados em relação aos requisitos da vaga informados ao final deste prompt.
 
 ## 🎯 Objetivos
 1. Verificar se cada currículo atende aos **requisitos da vaga**.
