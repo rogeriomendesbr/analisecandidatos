@@ -1,4 +1,6 @@
 import streamlit as st
+import pymupdf
+import pymupdf4llm
 from pathlib import Path
 from services.llm import analyze_resumes, build_prompt, RateLimitError, AuthenticationError, APIError, TokenLimitError
 from services.config import get_hf_api_key, get_hf_model
@@ -33,15 +35,20 @@ with col1:
     text_requisites = st.text_area("", height=200, label_visibility="collapsed")
 
 with col2:
-    st.markdown(f'<label class="top-label">Escolha os currículos no formato .md:</label>', unsafe_allow_html=True)
+    st.markdown(f'<label class="top-label">Escolha os currículos no formato .pdf ou .md:</label>', unsafe_allow_html=True)
     uploaded_file = st.file_uploader(
         "",
-        type=["md"],
+        type=["pdf", "md"],
         key=f"uploader_{st.session_state.uploader_key}",
         label_visibility="collapsed",
     )
     if uploaded_file is not None:
-        st.session_state.uploaded_files[uploaded_file.name] = uploaded_file.read().decode("utf-8")
+        if uploaded_file.name.lower().endswith(".pdf"):
+            doc = pymupdf.open(stream=uploaded_file.read(), filetype="pdf")
+            content = pymupdf4llm.to_markdown(doc)
+        else:
+            content = uploaded_file.read().decode("utf-8")
+        st.session_state.uploaded_files[uploaded_file.name] = content
         st.session_state.uploader_key += 1
         st.rerun()
 
