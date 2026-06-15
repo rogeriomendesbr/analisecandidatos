@@ -35,7 +35,7 @@ with col1:
     text_requisites = st.text_area("", height=200, label_visibility="collapsed")
 
 with col2:
-    st.markdown(f'<label class="top-label">Escolha os currículos no formato .pdf ou .md:</label>', unsafe_allow_html=True)
+    st.markdown(f'<label class="top-label">Escolha os currículos no formato .md ou .pdf:</label>', unsafe_allow_html=True)
     uploaded_file = st.file_uploader(
         "",
         type=["pdf", "md"],
